@@ -44,8 +44,6 @@ public class Main {
 
     }
 
-    //    9 999 999 999
-    //    9 999 000 999
     public static void numberInArmenian(Long number) {
         String numberInString = number.toString();
         ArrayList<String> finalStringInList = new ArrayList<>();
@@ -88,7 +86,7 @@ public class Main {
                 } else {
                     finalStringInList.add(0, " ");
                     finalStringInList.add(0, position);
-                    if(!((oneChar == 1 && position.equals("հարյուր")) || (i == 0 && position.equals("հազար")))){
+                    if(!((oneChar == 1 && position.equals("հարյուր")) || (i == 0 && position.equals("հազար") || (oneChar == 1 && i != 0 && i != numberInString.length() - 1 && Integer.parseInt(String.valueOf(numberInString.charAt(i - 1))) == 0)))){
                         for (int i1 = 0; i1 < hashMap.keySet().size(); i1++) {
                             if(oneChar == i1){
                                 finalStringInList.add(0, " ");
